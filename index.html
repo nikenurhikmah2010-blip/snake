@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🌌 Galaxy Snake</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Animated nebula blobs -->
+  <div class="nebula" id="neb1"></div>
+  <div class="nebula" id="neb2"></div>
+  <div class="nebula" id="neb3"></div>
+
+  <!-- Starfield canvas (background) -->
+  <canvas id="starfield"></canvas>
+
+  <!-- Screen flash on level up -->
+  <div id="lvlFlash"></div>
+
+  <!-- ── APP ── -->
+  <div id="app">
+
+    <header>
+      <h1 id="title">🌌 GALAXY SNAKE</h1>
+      <p id="subtitle">NAVIGATE THE COSMOS</p>
+    </header>
+
+    <!-- HUD -->
+    <div id="hud">
+      <div class="hud-pill" id="scoreBox">
+        <span class="hud-icon">🏆</span>
+        <span class="hud-label">SCORE</span>
+        <span class="hud-val" id="scoreVal">0</span>
+      </div>
+      <div class="hud-pill" id="lvlBox">
+        <span class="hud-icon">⚡</span>
+        <span class="hud-label">LEVEL</span>
+        <span class="hud-val" id="lvlVal">1</span>
+      </div>
+      <div class="hud-pill" id="livesBox">
+        <span class="hud-icon">💜</span>
+        <span class="hud-label">LIVES</span>
+        <span class="hud-val" id="livesVal">❤️❤️❤️</span>
+      </div>
+    </div>
+
+    <!-- XP / level progress -->
+    <div id="xpBarWrap">
+      <div id="xpBar"></div>
+      <span id="xpLabel">NEXT LVL: 0 / 5</span>
+    </div>
+
+    <!-- Canvas + overlays -->
+    <div id="gameWrap">
+      <canvas id="game" width="500" height="500"></canvas>
+
+      <div id="overlay" class="hidden">
+        <div id="overlayInner">
+          <div id="overlayEmoji">💀</div>
+          <div id="overlayTitle">GAME OVER</div>
+          <div id="overlayStats"></div>
+          <button class="btn btn-primary" id="overlayBtn">↩ RESTART</button>
+        </div>
+      </div>
+
+      <div id="pauseLabel">⏸ PAUSED</div>
+    </div>
+
+    <!-- Buttons -->
+    <div id="controls">
+      <button class="btn btn-start" id="startBtn">▶ START</button>
+      <button class="btn btn-pause" id="pauseBtn">⏸ PAUSE</button>
+      <button class="btn btn-reset" id="resetBtn">↺ RESET</button>
+    </div>
+
+    <p id="hint">WASD / ↑↓←→ to move &nbsp;·&nbsp; SPACE to pause</p>
+
+  </div><!-- /#app -->
+
+  <script src="script.js"></script>
+</body>
+</html>
