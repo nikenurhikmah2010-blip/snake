@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
   <title>🌌 Galaxy Snake</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-  <!-- Animated nebula blobs -->
+  <!-- Nebula background blobs -->
   <div class="nebula" id="neb1"></div>
   <div class="nebula" id="neb2"></div>
   <div class="nebula" id="neb3"></div>
 
-  <!-- Starfield canvas (background) -->
+  <!-- Starfield canvas -->
   <canvas id="starfield"></canvas>
 
-  <!-- Screen flash on level up -->
+  <!-- Level-up screen flash -->
   <div id="lvlFlash"></div>
 
-  <!-- ── APP ── -->
+  <!-- App shell -->
   <div id="app">
 
     <header>
@@ -48,15 +51,15 @@
       </div>
     </div>
 
-    <!-- XP / level progress -->
+    <!-- XP progress bar -->
     <div id="xpBarWrap">
       <div id="xpBar"></div>
       <span id="xpLabel">NEXT LVL: 0 / 5</span>
     </div>
 
-    <!-- Canvas + overlays -->
+    <!-- Game canvas + overlays -->
     <div id="gameWrap">
-      <canvas id="game" width="500" height="500"></canvas>
+      <canvas id="game"></canvas>
 
       <div id="overlay" class="hidden">
         <div id="overlayInner">
@@ -70,14 +73,21 @@
       <div id="pauseLabel">⏸ PAUSED</div>
     </div>
 
-    <!-- Buttons -->
+    <!-- Top buttons -->
     <div id="controls">
       <button class="btn btn-start" id="startBtn">▶ START</button>
-      <button class="btn btn-pause" id="pauseBtn">⏸ PAUSE</button>
-      <button class="btn btn-reset" id="resetBtn">↺ RESET</button>
+      <button class="btn btn-pause" id="pauseBtn">⏸</button>
+      <button class="btn btn-reset" id="resetBtn">↺</button>
     </div>
 
-    <p id="hint">WASD / ↑↓←→ to move &nbsp;·&nbsp; SPACE to pause</p>
+    <!-- D-Pad touch controls -->
+    <div id="dpad">
+      <div class="dp" id="dpUp">▲</div>
+      <div class="dp" id="dpLeft">◀</div>
+      <div class="dp" id="dpMid">⏸</div>
+      <div class="dp" id="dpRight">▶</div>
+      <div class="dp" id="dpDown">▼</div>
+    </div>
 
   </div><!-- /#app -->
 
